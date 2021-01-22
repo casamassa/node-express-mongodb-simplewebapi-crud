@@ -1,6 +1,6 @@
 const mongoClient = require("mongodb").MongoClient
 
-mongoClient.connect("mongodb://localhost:27017/workshop")
+mongoClient.connect("mongodb://localhost:27017/workshop", { useUnifiedTopology: true })
 .then(conn => global.conn = conn.db("workshop"))
 .catch(err => console.log(err))
 
@@ -14,7 +14,7 @@ function findCustomer(id, callback){
 }
 
 function insertCustomer(customer, callback){
-    global.conn.collection('customers').insert(customer, callback)
+    global.conn.collection('customers').insertOne(customer, callback)
 }
 
 function updateCustomer(id, customer, callback){

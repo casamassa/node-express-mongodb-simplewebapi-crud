@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \"nome\": \"Luiz\", \"idade\": 29}",
+					"raw": "{ \"nome\": \"Jose\", \"idade\": 29}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -39,7 +39,18 @@
 			"name": "get all",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTYxMTI3MzQ5MSwiZXhwIjoxNjExMjczNzkxfQ.mJ_JNE4LNlksvm89PVMn4QO4fRkOKJ-HAnuvPNXweGk",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "http://localhost:3000/clientes/",
 					"protocol": "http",
@@ -61,7 +72,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/clientes/6009c5cc378a47e414a2d594",
+					"raw": "http://localhost:3000/clientes/600a1575df5f42e50457cf3e",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -69,7 +80,7 @@
 					"port": "3000",
 					"path": [
 						"clientes",
-						"6009c5cc378a47e414a2d594"
+						"600a1575df5f42e50457cf3e"
 					]
 				}
 			},
@@ -157,6 +168,69 @@
 					"path": [
 						"clientes",
 						"6009c5cc378a47e414a2d594"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\":\"luiz\", \r\n    \"password\": \"123\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTYxMTI3MjgwMiwiZXhwIjoxNjExMjczMTAyfQ.fu74MOue9Et5NfWKlRl1N8fUSi_SzHUbwSBcjuE_fUw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"logout"
 					]
 				}
 			},
